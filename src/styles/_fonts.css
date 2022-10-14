@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@1&family=Julius+Sans+One&display=swap');
+
+:root {
+    --main-font: 'Julius Sans One', sans-serif;
+    --secondary-font: 'Abeezee', sans-serif;
+}

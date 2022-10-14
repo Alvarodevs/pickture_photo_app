@@ -1,0 +1,10 @@
+@import url('./_colors.css');
+@import url('./_fonts.css');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--main-font);
+}
+

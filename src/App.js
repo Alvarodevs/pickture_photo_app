@@ -1,9 +1,13 @@
+import Footer from "./components/footer";
+import Header from "./components/header";
+
 
 
 function App() {
   return (
     <div className="app">
-      <h3>App</h3>
+      <Header/>
+      <Footer/>
     </div>
   );
 }
