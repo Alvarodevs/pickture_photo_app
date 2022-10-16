@@ -59,6 +59,7 @@ export const MediaLinks = styled.div`
 export const Links = styled.div`
     display: flex;
     align-items: center;
+    justify-content: center;
     a {
         display: flex;
         align-items: center;
