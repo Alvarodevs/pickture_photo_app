@@ -22,9 +22,17 @@ const Header = () => {
                     <img src={home_icon} alt="Home icon" />
                 </HomeIconContainer>
                 <ManageDataIcons>
-                    <OrderByContainer>
-                        <FilterListOutlined />
-                        <span>Order by</span>
+                    <OrderByContainer className="order_by">
+                        <label for="sort">
+                            <FilterListOutlined />
+                            <span>Order by</span>
+                        </label>
+                        <select name="sort" id="sort">
+                            <option value="date">date</option>
+                            <option value="width">width</option>
+                            <option value="height">height</option>
+                            <option value="likes">likes</option>
+                        </select>
                     </OrderByContainer>
                     <InputContainer>
                         <input></input>

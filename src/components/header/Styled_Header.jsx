@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
     width: 100%;
@@ -15,7 +15,7 @@ export const HomeIconContainer = styled.button`
     background-color: var(--white);
     border: none;
     margin-left: 10px;
-    
+
     @media only screen and (max-width: 500px) {
         img {
             width: 100%;
@@ -42,9 +42,42 @@ export const ManageDataIcons = styled.div`
 `;
 
 export const OrderByContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        svg{
+            cursor: unset;
+        }
+    }
+    select {
+        position: absolute;
+        transform: translate(80px, -30px);
+        border-radius: 10px;
+        font-size: 15px;
+        background-color: var(--grey-shadow);
+        margin-left: 10px;
+        cursor: pointer;
+        &:focus-visible {
+            border: 0.5px solid var(--black);
+        }
+        option {
+            background-color: var(--grey-shadow);
+            border-radius: 20px;
+            margin: 10px;
+        }
+    }
+    @media only screen and (max-width: 620px) {
+        select {
+            transform: translate(-10px, 10px);
+        }
+    }
+    @media only screen and (max-width: 460px) {
+        select {
+            transform: translate(-20px, 11px);
+        }
+    }
 `;
 export const InputContainer = styled.div`
     width: 70%;
@@ -77,7 +110,7 @@ export const InputContainer = styled.div`
         flex-direction: column;
         margin-right: 0px;
         input {
-            width: 100%;
+            width: 90%;
             margin: 0 10px;
         }
         svg {
@@ -96,4 +129,3 @@ export const FavoritesContainer = styled.div`
     flex-direction: column;
     align-items: center;
 `;
-
