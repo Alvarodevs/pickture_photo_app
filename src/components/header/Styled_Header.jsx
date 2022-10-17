@@ -10,6 +10,7 @@ export const HeaderContainer = styled.div`
     position: fixed;
     top: 0;
     background-color: var(--white);
+    z-index: 1;
 `;
 
 export const HomeIconContainer = styled.button`

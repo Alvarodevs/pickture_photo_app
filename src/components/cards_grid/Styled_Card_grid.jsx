@@ -6,7 +6,7 @@ export const GridContainer = styled.div`
     display: grid;
     grid-auto-rows: 20rem;
     grid-template-columns: repeat(auto-fill, minmax(15rem, 0.7fr));
-    gap: 20px;
+    gap: 25px;
     overflow: hidden;
     justify-content: center;
 `;
