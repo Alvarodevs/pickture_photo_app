@@ -7,6 +7,9 @@ export const HeaderContainer = styled.div`
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
     display: flex;
     align-items: center;
+    position: fixed;
+    top: 0;
+    background-color: var(--white);
 `;
 
 export const HomeIconContainer = styled.button`

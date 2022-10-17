@@ -1,10 +1,17 @@
 import React from 'react'
-import {GridContainer} from "./Styled_Card_grid"
+import {GridContainer} from "./Styled_Card_grid";
+import Card from '../card';
+
 const CardsGrid = () => {
   return (
-      <div>
-          <GridContainer>Cards_grid</GridContainer>
-      </div>
+      
+          <GridContainer>
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+              <Card />
+          </GridContainer>
   );
 }
 

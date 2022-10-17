@@ -1,2 +1,2 @@
-import CardsGrid from "../cards_grid/CardsGrid";
-export default CardsGrid;
+import Card from "./Card";
+export default Card;

@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const FooterContainer = styled.div`
-    position: absolute;
+    position: fixed;
+    background-color: var(--white);
     bottom: 0;
     width: 100%;
     height: 60px;
@@ -9,6 +10,7 @@ export const FooterContainer = styled.div`
     box-shadow: 0px -3px 6px -3px rgba(0, 0, 0, 0.4);
     display: flex;
     justify-content: space-around;
+    overflow-y: hidden;
 `;
 
 export const Mail = styled.div`
