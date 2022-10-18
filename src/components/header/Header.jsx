@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
     HeaderContainer,
     HomeIconContainer,
@@ -13,35 +13,54 @@ import {
     FavoriteBorderOutlined,
     SearchOutlined,
 } from "@mui/icons-material";
+import { Link, useLocation } from "react-router-dom";
+import tags from "../../assets/icons/tags.svg";
 
 const Header = () => {
+    const [isHidden, setIsHidden] = useState(true);
+    const path = useLocation();
+
     return (
         <div>
             <HeaderContainer>
                 <HomeIconContainer>
-                    <img src={home_icon} alt="Home icon" />
+                    <Link to="/">
+                        <img src={home_icon} alt="Home icon" />
+                    </Link>
                 </HomeIconContainer>
                 <ManageDataIcons>
-                    <OrderByContainer className="order_by">
-                        <label for="sort">
-                            <FilterListOutlined />
-                            <span>Order by</span>
-                        </label>
-                        <select name="sort" id="sort">
-                            <option value="date">date</option>
-                            <option value="width">width</option>
-                            <option value="height">height</option>
-                            <option value="likes">likes</option>
-                        </select>
-                    </OrderByContainer>
+                    {path.pathname === "/my_photos" ? (
+                        <OrderByContainer className="order_by">
+                            {/* <label for="sort"> */}
+                                <FilterListOutlined className="order_icon"/>
+                                <span>Order by</span>
+                            {/* </label> */}
+                            <select name="sort" id="sort">
+                                <option value="date">date</option>
+                                <option value="width">width</option>
+                                <option value="height">height</option>
+                                <option value="likes">likes</option>
+                            </select>
+                        </OrderByContainer>
+                    ) : null}
+
                     <InputContainer>
                         <input></input>
                         <SearchOutlined />
                     </InputContainer>
-                    <FavoritesContainer>
-                        <FavoriteBorderOutlined />
-                        <span>My pics</span>
-                    </FavoritesContainer>
+                    {path.pathname === "/my_photos" ? (
+                        <FavoritesContainer>
+                            <img src={tags} alt="Tags to search" />
+                            <span>Tags</span>
+                        </FavoritesContainer>
+                    ) : (
+                        <Link to="/my_photos">
+                            <FavoritesContainer>
+                                <FavoriteBorderOutlined />
+                                <span>My pics</span>
+                            </FavoritesContainer>
+                        </Link>
+                    )}
                 </ManageDataIcons>
             </HeaderContainer>
         </div>

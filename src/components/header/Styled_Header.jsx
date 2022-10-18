@@ -15,7 +15,7 @@ export const HomeIconContainer = styled.button`
     background-color: var(--white);
     border: none;
     margin-left: 10px;
-
+    cursor: pointer;
     @media only screen and (max-width: 500px) {
         img {
             width: 100%;
@@ -27,8 +27,9 @@ export const ManageDataIcons = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: end;
     font-weight: bold;
+    margin-right: 50px;
     svg {
         font-size: 30px;
         cursor: pointer;
@@ -36,24 +37,34 @@ export const ManageDataIcons = styled.div`
     span {
         text-align: center;
     }
+    a {
+        text-decoration: none;
+        color: var(--black);
+    }
+    @media only screen and (max-width: 630px) {
+        margin-right: 10px;
+    }
     @media only screen and (max-width: 460px) {
+        width: 80%;
         font-size: 11px;
     }
 `;
 
 export const OrderByContainer = styled.div`
-    label {
+    .order_icon {
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
         position: relative;
-        svg{
+        margin: auto;
+        cursor: unset;
+        svg {
             cursor: unset;
         }
     }
     select {
         position: absolute;
-        transform: translate(80px, -30px);
         border-radius: 10px;
         font-size: 15px;
         background-color: var(--grey-shadow);
@@ -66,19 +77,35 @@ export const OrderByContainer = styled.div`
             background-color: var(--grey-shadow);
             border-radius: 20px;
             margin: 10px;
+            padding: 5px;
         }
     }
-    @media only screen and (max-width: 620px) {
+    @media only screen and (max-width: 640px) {
+        width: fit-content;
+        span {
+            font-size: 12px;
+        }
         select {
-            transform: translate(-10px, 10px);
+            transform: translate(-65px, 25px);
+            margin: auto;
         }
     }
     @media only screen and (max-width: 460px) {
         select {
-            transform: translate(-20px, 11px);
+            transform: translate(-65px, 25px);
+        }
+    }
+    @media only screen and (max-width: 366px) {
+        span {
+            display: block;
+        }
+        select {
+            transform: translate(-5px, 10px);
         }
     }
 `;
+
+
 export const InputContainer = styled.div`
     width: 70%;
     height: 100%;
@@ -105,10 +132,16 @@ export const InputContainer = styled.div`
         position: absolute;
         right: 15px;
     }
-
+    @media only screen and (max-width: 640px) {
+        width: 65%;
+        input {
+            width: 90%;
+        }
+    }
     @media only screen and (max-width: 460px) {
         flex-direction: column;
         margin-right: 0px;
+        width: 60%;
         input {
             width: 90%;
             margin: 0 10px;
@@ -128,4 +161,9 @@ export const FavoritesContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    img {
+        width: 50px;
+        height: 35px;
+    }
+    
 `;
