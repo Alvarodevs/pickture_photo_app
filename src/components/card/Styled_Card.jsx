@@ -53,4 +53,5 @@ export const Title = styled.p`
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow-x: clip;
+    padding-right: 5px;
 `;
