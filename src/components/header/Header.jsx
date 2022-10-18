@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import {
     HeaderContainer,
     HomeIconContainer,
@@ -17,7 +16,6 @@ import { Link, useLocation } from "react-router-dom";
 import tags from "../../assets/icons/tags.svg";
 
 const Header = () => {
-    const [isHidden, setIsHidden] = useState(true);
     const path = useLocation();
 
     return (
@@ -31,10 +29,8 @@ const Header = () => {
                 <ManageDataIcons>
                     {path.pathname === "/my_photos" ? (
                         <OrderByContainer className="order_by">
-                            {/* <label for="sort"> */}
-                                <FilterListOutlined className="order_icon"/>
-                                <span>Order by</span>
-                            {/* </label> */}
+                            <FilterListOutlined className="order_icon" />
+                            <span>Order by</span>
                             <select name="sort" id="sort">
                                 <option value="date">date</option>
                                 <option value="width">width</option>
