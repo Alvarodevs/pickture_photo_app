@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
     HeaderContainer,
     HomeIconContainer,
@@ -14,10 +15,18 @@ import {
 } from "@mui/icons-material";
 import { Link, useLocation } from "react-router-dom";
 import tags from "../../assets/icons/tags.svg";
-
+import { useDispatch } from "react-redux";
+import { searchAsync } from "../../features/search/searchSlice";
 
 const Header = () => {
+    const [query, setQuery] = useState("");
     const path = useLocation();
+    const dispatch = useDispatch();
+console.log(query);
+
+    const onSearch = (e) => {
+        dispatch(searchAsync(query))
+    };
 
     return (
         <div>
@@ -28,10 +37,12 @@ const Header = () => {
                     </Link>
                 </HomeIconContainer>
                 <ManageDataIcons>
+                    {/* Display sort icon if location "/my_photos" */}
                     {path.pathname === "/my_photos" ? (
                         <OrderByContainer className="order_by">
                             <FilterListOutlined className="order_icon" />
                             <span>Order by</span>
+                            {/* Pending change for satyling not select tag to use */}
                             <select name="sort" id="sort">
                                 <option value="date">date</option>
                                 <option value="width">width</option>
@@ -42,9 +53,16 @@ const Header = () => {
                     ) : null}
 
                     <InputContainer>
-                        <input></input>
-                        <SearchOutlined />
+                        <input
+                            id="input"
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
+                            onSubmit={(e) => onSearch}
+                        />
+                        <SearchOutlined onClick={onSearch}/>
                     </InputContainer>
+
+                    {/* Display link to my_photos or search by tag if location "/" or "/my_photos" */}
                     {path.pathname === "/my_photos" ? (
                         <FavoritesContainer>
                             <img src={tags} alt="Tags to search" />
