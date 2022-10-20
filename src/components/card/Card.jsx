@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import {
     CardShape,
@@ -14,7 +14,7 @@ import { useDispatch } from "react-redux";
 
 const Card = ({id, width, heigth, likes, description, alt_description, url_full, url_thumb,}) => {
     const dispatch = useDispatch();
-
+    
     // const [open, setOpen] = useState(false);
 
     // const handleOpenDescription = (e) => {
@@ -27,9 +27,18 @@ const Card = ({id, width, heigth, likes, description, alt_description, url_full,
     //     setOpen(false);
     // };
 
-    //Adding to favorites in localStorage and state
+
+    //-------------
+    //Adding to favorites in localStorage and state w. saved date
     
-    const currentImage = {
+    const currentDate = () => {
+        const date = new Date();
+        const day = date.toLocaleDateString();
+        const time = date.toLocaleTimeString();
+        return `${day}, ${time}`;
+    };
+
+    let currentImage = {
         id: id,
         width: width,
         heigth: heigth,
@@ -38,11 +47,13 @@ const Card = ({id, width, heigth, likes, description, alt_description, url_full,
         alt_description: alt_description,
         url_full: url_full,
         url_thumb: url_thumb,
+        savedDate: currentDate(),
     };
 
-    const handleFavorite = (e) => {
+    const handleFavorite = () => {
         dispatch(addFavorite(currentImage));
     };
+
     //---------------
 
     return (
@@ -52,10 +63,11 @@ const Card = ({id, width, heigth, likes, description, alt_description, url_full,
                     <img src={add_fav} alt="Add to favourites" />
                 </AddButton>
                 <Title
-                    //onClick={handleOpenDescription}
+                //onClick={handleOpenDescription}
                 >
                     {description ? description || alt_description : "Untitled"}
                 </Title>
+                {/* --------- SNACKBAR TO SHOW FULL DESCRIPTION ------------ */}
                 {/* <Snackbar
                     open={open}
                     autoHideDuration={3000}
@@ -69,6 +81,7 @@ const Card = ({id, width, heigth, likes, description, alt_description, url_full,
                         onClick={handleCloseDescription}
                     />
                 </Snackbar> */}
+                {/* --------------------------------- */}
                 <CardButton />
             </BottomCardContainer>
         </CardShape>
