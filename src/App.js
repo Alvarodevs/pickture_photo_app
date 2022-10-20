@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import CardsGrid from "./components/cards_grid";
+import Modal from "./components/modal";
 import { useDispatch } from "react-redux";
 
 function App() {
@@ -17,8 +18,10 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route exact path="/" element={<CardsGrid/>}></Route>
-          <Route exact path="/my_photos" element={<CardsGrid />}></Route>
+          <Route exact path="/" element={<CardsGrid/>}/>
+          <Route exact path="/:id" element={<Modal />} />
+          <Route exact path="/my_photos" element={<CardsGrid />}/>
+          <Route exact path="/my_photos/:id" element={<Modal />}/>
         </Routes>
       </BrowserRouter>
       <Footer />

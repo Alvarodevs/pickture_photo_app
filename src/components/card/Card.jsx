@@ -82,7 +82,7 @@ const Card = ({id, width, heigth, likes, description, alt_description, url_full,
                     />
                 </Snackbar> */}
                 {/* --------------------------------- */}
-                <CardButton />
+                <CardButton data={currentImage} />
             </BottomCardContainer>
         </CardShape>
     );
