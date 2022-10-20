@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CardShape = styled.div`
     height: 310px;
-    background-image: url("https://images.unsplash.com/photo-1665655167741-6968454af1c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE4fHhqUFI0aGxrQkdBfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60");
+    background-image: url(${props => props.image ? props.image : props.image2});
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -54,4 +54,6 @@ export const Title = styled.p`
     white-space: nowrap;
     overflow-x: clip;
     padding-right: 5px;
+    cursor: pointer;
+   
 `;

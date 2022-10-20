@@ -8,7 +8,7 @@ export const CardButtonContainer = styled.button`
     display: grid;
     padding: 3px 30px;
     margin: 5px auto;
-    transform: translate(0px, -10px);
+    transform: translate(0px, -15px);
     &:hover {
         cursor: pointer;
     }

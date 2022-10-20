@@ -22,7 +22,6 @@ const Header = () => {
     const [query, setQuery] = useState("");
     const path = useLocation();
     const dispatch = useDispatch();
-console.log(query);
 
     const onSearch = (e) => {
         dispatch(searchAsync(query))

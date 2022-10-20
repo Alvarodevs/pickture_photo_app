@@ -25,10 +25,9 @@ export const searchSlice = createSlice({
             .addCase(searchAsync.pending, (state) => {
                 state.status = 'loading';        
             })
-            .addCase(searchAsync.fulfilled, (state,action) => {
-                console.log('payload', action)
-                state.status = 'ok';
+            .addCase(searchAsync.fulfilled, (state,action) => {   
                 state.pictures = action.payload;
+                state.status = 'ok';
             })
             .addCase(searchAsync.rejected, (state) => {
                 state.status = 'ko'
@@ -36,10 +35,8 @@ export const searchSlice = createSlice({
     }
 });
 
-export const { loadImages } = searchSlice.actions;
-
 //Function for selecting images from state
 export const selectImages = (state) => state.search.pictures;
-
+export const selectAppState = (state) => state.search.status;
 
 export default searchSlice.reducer;
