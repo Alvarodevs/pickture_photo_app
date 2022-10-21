@@ -6,10 +6,6 @@ const initialState = {
     status: 'ok',
 }
 
-//Insert into localStorage
-const toLocalStorage = (image) => {
-    localStorage.setItem('favorites', image)
-}
 
 export const favoritesSlice = createSlice({
     name: 'favorites',
