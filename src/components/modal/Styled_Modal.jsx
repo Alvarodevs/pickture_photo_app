@@ -63,17 +63,26 @@ export const Image = styled.img`
 
 export const DataContainer = styled.div`
     height: 30%;
+    display: flex;
+    flex-direction: column;
 `;
 export const DescriptionAndIconsContainer = styled.div`
     display: flex;
-    height: 60%;
+    height: 50%;
+    .MuiInputBase-root,.MuiInput-formControl {
+        border: transparent;
+        padding: 3px 5px;
+    }
+    @media only screen and (max-width: 490){
+        height: 35%;
+    }
 `;
 
 export const Description = styled.p`
     font-family: var(--main-font);
     height: 100%;
     width: 80%;
-    padding: 0.5rem;
+    padding: 0.2rem 0.5rem;
     font-size: 1rem;
 `;
 
@@ -81,18 +90,20 @@ export const IconsContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 20px;
-    height: 70%;
-    width: 20%;
-    .edit-icon{
-        margin: 20px 0;
-    } 
+    padding-top: 10px;
+    height: 60%;
+    width: 15%;
+    svg{
+        font-size: 2rem;
+    }
+    
 `;
 
 export const DataDisplayContainer = styled.div`
     display: flex;
     justify-content: space-around;
     width: 100%;
+    margin-top: 10px;
     padding: 0 5px;
     h6 {
         font-family: var(--main-font);
@@ -109,11 +120,15 @@ export const DownloadButton = styled.button`
     border: none;
     display: grid;
     padding: 3px 30px;
-    margin: 30px auto;
+    margin: 30px auto 0px auto;
     transform: translate(0px, -15px);
     font-size: 20px;
     &:hover {
         cursor: pointer;
         color: var(--black);
+    }
+    @media only screen and (max-width: 490) {
+        margin: 0px auto;
+        font-size: 10px;
     }
 `;

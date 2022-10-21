@@ -32,6 +32,13 @@ const Modal = () => {
         if (location.pathname.includes("my_photos")) {
             return (
                 <TextField
+                variant="standard"
+                    multiline="true"
+                    maxRows="3"
+                    fullWidth="true"
+                    InputProps={{
+                        disableUnderline: true,
+                    }}
                     defaultValue={
                         image.description
                             ? image.description
@@ -93,14 +100,18 @@ const Modal = () => {
                     </DescriptionAndIconsContainer>
                     <DataDisplayContainer>
                         <Typography variant="h6">
-                            Width: {image.width}
+                            Width: {image.width || "None"}
                         </Typography>
                         <Typography variant="h6">
-                            Heigth: {image.heigth}
+                            Heigth: {image.heigth || "None"}
                         </Typography>
                         <Typography variant="h6">Date: {image.date}</Typography>
                     </DataDisplayContainer>
-                    <DownloadButton onClick={() => saveFileFromUrl(image.url_full, image.id)}>
+                    <DownloadButton
+                        onClick={() =>
+                            saveFileFromUrl(image.url_full, image.id)
+                        }
+                    >
                         Download
                     </DownloadButton>
                 </DataContainer>
