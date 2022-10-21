@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 
 const CardButton = ({ data }) => {
     const path = useLocation();
-
+    
     const handleRedirect = () => {
         if (path.pathname === "/") {
             return `/${data.id}`;
@@ -27,7 +27,8 @@ const CardButton = ({ data }) => {
                     description: data.description,
                     alt_description: data.alt_description,
                     url_full: data.url_full,
-                    url_thumb: data.url_thumb
+                    url_thumb: data.url_thumb,
+                    date: data.savedDate
                 }
             }
         >
