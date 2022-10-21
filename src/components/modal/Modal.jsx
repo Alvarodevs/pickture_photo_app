@@ -18,10 +18,15 @@ import {
     EditOutlined,
     CloseRounded,
 } from "@mui/icons-material";
+import { saveAs } from 'file-saver'; 
 
 const Modal = () => {
     const location = useLocation();
     const image = location.state;
+
+    const saveFileFromUrl = (url, id) => {
+        saveAs(url, `${id}.jpg`)
+    };
 
     const handleDescriptionEdit = () => {
         if (location.pathname.includes("my_photos")) {
@@ -95,7 +100,9 @@ const Modal = () => {
                         </Typography>
                         <Typography variant="h6">Date: {image.date}</Typography>
                     </DataDisplayContainer>
-                    <DownloadButton>Download</DownloadButton>
+                    <DownloadButton onClick={() => saveFileFromUrl(image.url_full, image.id)}>
+                        Download
+                    </DownloadButton>
                 </DataContainer>
             </ModalContainer>
         </ModalBackground>
