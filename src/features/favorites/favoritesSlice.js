@@ -2,14 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 const initialState = {
-    favourites: localStorage.getItem('favorites') ? JSON.parse(localStorage.getItem('favorites')) : [],
-    appState: 'ok',
-}
-
-
-//Check if image already stored in state
-function isAdded(state, id) {
-    return state.some(image => image.id === id);
+    favorites: localStorage.getItem('favorites') ? JSON.parse(localStorage.getItem('favorites')) : [],
+    status: 'ok',
 }
 
 //Insert into localStorage
@@ -20,21 +14,29 @@ const toLocalStorage = (image) => {
 export const favoritesSlice = createSlice({
     name: 'favorites',
     initialState,
-    reducers:{
+    reducers: {
         addFavorite(state, action) {
-            state.appState = 'loading';
-            
-            if(isAdded(state.favourites, action.payload.id)) {
-                return state.appState = 'ok';
+            state.status = 'loading';
+            if ([...state.favorites].some(image => image.id === action.payload.id)) {
+                state.status = 'ok';
             } else {
-                state.favourites = [...state.favourites, action.payload];
-                toLocalStorage(JSON.stringify(action.payload));
-                return state.appState = 'ok';
+                state.favorites = [...state.favorites, action.payload];
+                localStorage.setItem('favorites', JSON.stringify(state.favorites));
+                state.status = 'ok';
             }
         },
+        deleteFavorite(state, action) {
+            state.status = 'loading';
+            state.favorites = state.favorites.filter(image => image.id !== action.payload)
+            localStorage.setItem('favorites', JSON.stringify(state.favorites));
+            state.status = 'ok';
+        }
     },
 })
 
-export const { addFavorite } = favoritesSlice.actions;
+export const selectFavs = (state) => state.favorites.favorites;
+export const selectAppStateFavs = (state) => state.favorites.status;
+
+export const { addFavorite, deleteFavorite } = favoritesSlice.actions;
 
 export default favoritesSlice.reducer;

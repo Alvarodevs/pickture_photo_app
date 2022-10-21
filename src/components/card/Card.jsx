@@ -8,13 +8,19 @@ import {
 } from "./Styled_Card";
 import CardButton from "../card_button/CardButton";
 import add_fav from "../../assets/icons/add_fav.svg";
-import { addFavorite } from "../../features/favorites/favoritesSlice";
+import remove_fav from "../../assets/icons/delete.svg";
+import {
+    addFavorite,
+    deleteFavorite,
+} from "../../features/favorites/favoritesSlice";
 import { useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
+
 //import { Snackbar, IconButton } from "@mui/material";
 
 const Card = ({id, width, heigth, likes, description, alt_description, url_full, url_thumb,}) => {
     const dispatch = useDispatch();
-    
+    const location = useLocation();
     // const [open, setOpen] = useState(false);
 
     // const handleOpenDescription = (e) => {
@@ -56,12 +62,23 @@ const Card = ({id, width, heigth, likes, description, alt_description, url_full,
 
     //---------------
 
+    //Delete fav
+    const handleDeleteFav = () => {
+        dispatch(deleteFavorite(currentImage.id));
+    }
+
     return (
         <CardShape image={url_thumb} image2={url_full}>
             <BottomCardContainer>
-                <AddButton onClick={handleFavorite}>
-                    <img src={add_fav} alt="Add to favourites" />
-                </AddButton>
+                {location.pathname.includes("/my_photos") ? (
+                    <AddButton onClick={handleDeleteFav}>
+                        <img src={remove_fav} alt="Delete from favourites" />
+                    </AddButton>
+                ) : (
+                    <AddButton onClick={handleFavorite}>
+                        <img src={add_fav} alt="Add to favourites" />
+                    </AddButton>
+                )}
                 <Title
                 //onClick={handleOpenDescription}
                 >
