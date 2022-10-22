@@ -6,6 +6,9 @@ const initialState = {
     status: 'ok',
 }
 
+const handleOrder = (favs, value) => {   
+    return value ? favs.sort((a, b) => a.value - b.value) : null;
+}
 
 export const favoritesSlice = createSlice({
     name: 'favorites',
@@ -35,6 +38,10 @@ export const favoritesSlice = createSlice({
                 return image
             })
             localStorage.setItem('favorites', JSON.stringify(state.favorites));
+        }, 
+        orderBy(state, action) {
+            console.log(action.payload);
+            state.favorites = handleOrder(state.favorites, action.payload)
         }
     },
 })
@@ -42,6 +49,6 @@ export const favoritesSlice = createSlice({
 export const selectFavs = (state) => state.favorites.favorites;
 export const selectAppStateFavs = (state) => state.favorites.status;
 
-export const { addFavorite, deleteFavorite, editDescription } = favoritesSlice.actions;
+export const { addFavorite, deleteFavorite, editDescription, orderBy } = favoritesSlice.actions;
 
 export default favoritesSlice.reducer;
