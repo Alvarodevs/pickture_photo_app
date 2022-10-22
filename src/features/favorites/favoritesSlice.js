@@ -26,6 +26,15 @@ export const favoritesSlice = createSlice({
             state.favorites = state.favorites.filter(image => image.id !== action.payload)
             localStorage.setItem('favorites', JSON.stringify(state.favorites));
             state.status = 'ok';
+        },
+        editDescription(state, action) {
+            state.favorites = state.favorites.map(image => {
+               if(image.id === action.payload.id) {
+                    image.description = action.payload.description; 
+                }
+                return image
+            })
+            localStorage.setItem('favorites', JSON.stringify(state.favorites));
         }
     },
 })
@@ -33,6 +42,6 @@ export const favoritesSlice = createSlice({
 export const selectFavs = (state) => state.favorites.favorites;
 export const selectAppStateFavs = (state) => state.favorites.status;
 
-export const { addFavorite, deleteFavorite } = favoritesSlice.actions;
+export const { addFavorite, deleteFavorite, editDescription } = favoritesSlice.actions;
 
 export default favoritesSlice.reducer;

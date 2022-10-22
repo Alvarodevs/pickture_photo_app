@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
     ModalBackground,
     ModalContainer,
@@ -15,46 +15,55 @@ import { useLocation, Link } from "react-router-dom";
 import { Badge, TextField, Typography } from "@mui/material";
 import {
     ThumbUpOutlined,
-    EditOutlined,
+    SaveAltOutlined,
     CloseRounded,
 } from "@mui/icons-material";
-import { saveAs } from 'file-saver'; 
+import { saveAs } from "file-saver";
+import { useDispatch } from "react-redux";
+import { editDescription } from "../../features/favorites/favoritesSlice";
 
 const Modal = () => {
     const location = useLocation();
-    const image = location.state;
+    const dispatch = useDispatch();
 
+    //Image object recovered from state, passed by Link
+    const image = location.state;
+    const [description, setDescription] = useState(
+        image.description || "No description available."
+    );
     const saveFileFromUrl = (url, id) => {
-        saveAs(url, `${id}.jpg`)
+        saveAs(url, `${id}.jpg`);
     };
 
-    const handleDescriptionEdit = () => {
+    const handleDescriptionField = () => {
         if (location.pathname.includes("my_photos")) {
             return (
                 <TextField
-                variant="standard"
+                    variant="standard"
                     multiline="true"
                     maxRows="3"
                     fullWidth="true"
                     InputProps={{
                         disableUnderline: true,
                     }}
-                    defaultValue={
-                        image.description
-                            ? image.description
-                            : "No description available."
-                    }
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
                 />
             );
         } else {
             return (
                 <Description>
-                    {image.description
-                        ? image.description
-                        : "No description available."}
+                    {description}
                 </Description>
             );
         }
+    };
+
+    const handleEditDescription = (id, description) => {
+        dispatch(editDescription({
+            id: id, 
+            description: description
+        }));
     };
 
     return (
@@ -75,7 +84,7 @@ const Modal = () => {
                 </ImageContainer>
                 <DataContainer>
                     <DescriptionAndIconsContainer>
-                        {handleDescriptionEdit()}
+                        {handleDescriptionField()}
                         <IconsContainer>
                             <Badge
                                 badgeContent={image.likes}
@@ -91,9 +100,10 @@ const Modal = () => {
                                 />
                             </Badge>
                             {location.pathname.includes("my_photos") ? (
-                                <EditOutlined
+                                <SaveAltOutlined
                                     className="edit-icon"
                                     fontSize="large"
+                                    onClick={handleEditDescription(image.id, description)}
                                 />
                             ) : null}
                         </IconsContainer>
