@@ -11,9 +11,9 @@ function App() {
   const dispatch = useDispatch();
 
   //Trigger for random cards at app loading
-  // useEffect(() => {
-  //   dispatch(searchAsync())
-  // }, [])
+  useEffect(() => {
+    dispatch(searchAsync())
+  }, [])
 
   return (
     <div className="app">
