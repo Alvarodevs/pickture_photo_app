@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/Alvarodevs/pickture_photo_app/static/css/main.a0614637.css",
-    "main.js": "/Alvarodevs/pickture_photo_app/static/js/main.10e7e305.js",
-    "static/js/787.f588d1b0.chunk.js": "/Alvarodevs/pickture_photo_app/static/js/787.f588d1b0.chunk.js",
-    "static/media/home_icon.svg": "/Alvarodevs/pickture_photo_app/static/media/home_icon.a92e37f71d5c4c30158132c4bd985e1b.svg",
-    "static/media/tags.svg": "/Alvarodevs/pickture_photo_app/static/media/tags.359a1dea2dd90beabc90c109b6c80041.svg",
-    "static/media/add_fav.svg": "/Alvarodevs/pickture_photo_app/static/media/add_fav.6d4aba04c09956cd543d067c184fbd9b.svg",
-    "static/media/github.svg": "/Alvarodevs/pickture_photo_app/static/media/github.95d5dcae3c028c1836dc3fc0127d88ec.svg",
-    "static/media/delete.svg": "/Alvarodevs/pickture_photo_app/static/media/delete.ad1ee8be8bb06e343ba54874509a5373.svg",
-    "static/media/linkedin.svg": "/Alvarodevs/pickture_photo_app/static/media/linkedin.17271f6083fb76f9e748272f543fd442.svg",
-    "index.html": "/Alvarodevs/pickture_photo_app/index.html",
-    "main.a0614637.css.map": "/Alvarodevs/pickture_photo_app/static/css/main.a0614637.css.map",
-    "main.10e7e305.js.map": "/Alvarodevs/pickture_photo_app/static/js/main.10e7e305.js.map",
-    "787.f588d1b0.chunk.js.map": "/Alvarodevs/pickture_photo_app/static/js/787.f588d1b0.chunk.js.map"
+    "main.css": "/pickture_photo_app/static/css/main.a0614637.css",
+    "main.js": "/pickture_photo_app/static/js/main.25059d56.js",
+    "static/js/787.f588d1b0.chunk.js": "/pickture_photo_app/static/js/787.f588d1b0.chunk.js",
+    "static/media/home_icon.svg": "/pickture_photo_app/static/media/home_icon.a92e37f71d5c4c30158132c4bd985e1b.svg",
+    "static/media/tags.svg": "/pickture_photo_app/static/media/tags.359a1dea2dd90beabc90c109b6c80041.svg",
+    "static/media/add_fav.svg": "/pickture_photo_app/static/media/add_fav.6d4aba04c09956cd543d067c184fbd9b.svg",
+    "static/media/github.svg": "/pickture_photo_app/static/media/github.95d5dcae3c028c1836dc3fc0127d88ec.svg",
+    "static/media/delete.svg": "/pickture_photo_app/static/media/delete.ad1ee8be8bb06e343ba54874509a5373.svg",
+    "static/media/linkedin.svg": "/pickture_photo_app/static/media/linkedin.17271f6083fb76f9e748272f543fd442.svg",
+    "index.html": "/pickture_photo_app/index.html",
+    "main.a0614637.css.map": "/pickture_photo_app/static/css/main.a0614637.css.map",
+    "main.25059d56.js.map": "/pickture_photo_app/static/js/main.25059d56.js.map",
+    "787.f588d1b0.chunk.js.map": "/pickture_photo_app/static/js/787.f588d1b0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a0614637.css",
-    "static/js/main.10e7e305.js"
+    "static/js/main.25059d56.js"
   ]
 }
