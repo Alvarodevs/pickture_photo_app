@@ -23,14 +23,17 @@ import { useDispatch } from "react-redux";
 import { editDescription } from "../../features/favorites/favoritesSlice";
 
 const Modal = () => {
+    
     const location = useLocation();
+    const image = location.state;
     const dispatch = useDispatch();
 
     //Image object recovered from state, passed by Link
-    const image = location.state;
+    
     const [description, setDescription] = useState(
-        image.description || "No description available."
+        image.description ? image.description : "No description available."
     );
+    
     const saveFileFromUrl = (url, id) => {
         saveAs(url, `${id}.jpg`);
     };
