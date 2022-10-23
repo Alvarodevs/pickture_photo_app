@@ -96,7 +96,9 @@ export const IconsContainer = styled.div`
     svg{
         font-size: 2rem;
     }
-    
+    .badge{
+        margin-top: 3px;
+    }
 `;
 
 export const DataDisplayContainer = styled.div`
