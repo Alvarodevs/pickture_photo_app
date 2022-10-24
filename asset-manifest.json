@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/pickture_photo_app/static/css/main.a0614637.css",
-    "main.js": "/pickture_photo_app/static/js/main.ca4db7fd.js",
+    "main.js": "/pickture_photo_app/static/js/main.fdf3e167.js",
     "static/js/787.f588d1b0.chunk.js": "/pickture_photo_app/static/js/787.f588d1b0.chunk.js",
     "static/media/home_icon.svg": "/pickture_photo_app/static/media/home_icon.a92e37f71d5c4c30158132c4bd985e1b.svg",
     "static/media/tags.svg": "/pickture_photo_app/static/media/tags.359a1dea2dd90beabc90c109b6c80041.svg",
@@ -11,11 +11,11 @@
     "static/media/linkedin.svg": "/pickture_photo_app/static/media/linkedin.17271f6083fb76f9e748272f543fd442.svg",
     "index.html": "/pickture_photo_app/index.html",
     "main.a0614637.css.map": "/pickture_photo_app/static/css/main.a0614637.css.map",
-    "main.ca4db7fd.js.map": "/pickture_photo_app/static/js/main.ca4db7fd.js.map",
+    "main.fdf3e167.js.map": "/pickture_photo_app/static/js/main.fdf3e167.js.map",
     "787.f588d1b0.chunk.js.map": "/pickture_photo_app/static/js/787.f588d1b0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a0614637.css",
-    "static/js/main.ca4db7fd.js"
+    "static/js/main.fdf3e167.js"
   ]
 }
