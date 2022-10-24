@@ -21,7 +21,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<CardsGrid/>}/>
-          <Route exact path="/pickture_photo_app" element={<CardsGrid />} />
+          {/* <Route exact path="/pickture_photo_app" element={<CardsGrid />} /> */}
           <Route exact path="/id/:id" element={<Modal />} />
           <Route exact path="/my_photos" element={<CardsGrid />}/>
           <Route exact path="/my_photos/:id" element={<Modal />}/>
