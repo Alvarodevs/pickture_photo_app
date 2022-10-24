@@ -20,8 +20,8 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route exact path="/" element={<CardsGrid/>}/>
-          <Route exact path="/:id" element={<Modal />} />
+          <Route path="/" element={<CardsGrid/>}/>
+          <Route exact path="/id/:id" element={<Modal />} />
           <Route exact path="/my_photos" element={<CardsGrid />}/>
           <Route exact path="/my_photos/:id" element={<Modal />}/>
         </Routes>

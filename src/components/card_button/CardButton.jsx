@@ -8,7 +8,7 @@ const CardButton = ({ data }) => {
     
     const handleRedirect = () => {
         if (path.pathname === "/") {
-            return `/${data.id}`;
+            return `/id/${data.id}`;
         }
         if (path.pathname === "/my_photos") {
             return `/my_photos/${data.id}`;
