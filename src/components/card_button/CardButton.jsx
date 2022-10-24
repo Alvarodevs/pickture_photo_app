@@ -28,6 +28,7 @@ const CardButton = ({ data }) => {
                     alt_description: data.alt_description,
                     url_full: data.url_full,
                     url_thumb: data.url_thumb,
+                    url_regular: data.url_regular,
                     date: data.savedDate
                 }
             }
@@ -50,4 +51,5 @@ CardButton.propTypes = {
     alt_description: PropTypes.string,
     url_full: PropTypes.string,
     url_thumb: PropTypes.string,
+    url_regular: PropTypes.string
 };

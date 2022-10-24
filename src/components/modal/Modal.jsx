@@ -29,7 +29,7 @@ const Modal = () => {
     //Image object recovered from state, passed by Link
     const image = location.state;
     const [description, setDescription] = useState(
-        !image.description || null ? "No description available." : image.description
+        image?.description ? "No description available." : image.description
     );
     
     const saveFileFromUrl = (url, id) => {
@@ -61,10 +61,7 @@ const Modal = () => {
     };
 
     const handleEditDescription = (id, description) => {
-        dispatch(editDescription({
-            id: id, 
-            description: description
-        }));
+        dispatch(editDescription({id: id, description: description}));   
     };
 
     return (
@@ -81,14 +78,14 @@ const Modal = () => {
                         <CloseRounded />
                     </Link>
 
-                    <Image src={image.url_full} alt={image.alt_description} />
+                    <Image src={image?.url_regular} alt={image?.alt_description} />
                 </ImageContainer>
                 <DataContainer>
                     <DescriptionAndIconsContainer>
                         {handleDescriptionField()}
                         <IconsContainer>
                             <Badge
-                                badgeContent={image.likes}
+                                badgeContent={image?.likes}
                                 anchorOrigin={{
                                     vertical: "top",
                                     horizontal: "left",
@@ -102,26 +99,32 @@ const Modal = () => {
                                 />
                             </Badge>
                             {location.pathname.includes("my_photos") ? (
-                                <SaveAltOutlined
-                                    className="edit-icon"
-                                    fontSize="large"
-                                    onClick={handleEditDescription(image.id, description)}
-                                />
+                                <Link to={'/my_photos'}>
+                                    <SaveAltOutlined
+                                        className="edit-icon"
+                                        fontSize="large"
+                                        onClick={() => handleEditDescription(
+                                              image?.id,
+                                                description
+                                            )
+                                        }
+                                    />
+                                </Link>
                             ) : null}
                         </IconsContainer>
                     </DescriptionAndIconsContainer>
                     <DataDisplayContainer>
                         <Typography variant="h6">
-                            Width: {image.width || "None"}
+                            Width: {image?.width || "None"}
                         </Typography>
                         <Typography variant="h6">
-                            Heigth: {image.heigth || "None"}
+                            Heigth: {image?.heigth || "None"}
                         </Typography>
-                        <Typography variant="h6">Date: {image.date}</Typography>
+                        <Typography variant="h6">Date: {image?.date}</Typography>
                     </DataDisplayContainer>
                     <DownloadButton
                         onClick={() =>
-                            saveFileFromUrl(image.url_full, image.id)
+                            saveFileFromUrl(image?.url_full, image?.id)
                         }
                     >
                         Download

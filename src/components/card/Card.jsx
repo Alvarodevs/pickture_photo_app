@@ -18,7 +18,7 @@ import { useLocation } from "react-router-dom";
 
 //import { Snackbar, IconButton } from "@mui/material";
 
-const Card = ({id, width, heigth, likes, description, alt_description, url_full, url_thumb,}) => {
+const Card = ({id, width, heigth, likes, description, alt_description, url_full, url_thumb, url_regular}) => {
     const dispatch = useDispatch();
     const location = useLocation();
     // const [open, setOpen] = useState(false);
@@ -53,6 +53,7 @@ const Card = ({id, width, heigth, likes, description, alt_description, url_full,
         alt_description: alt_description,
         url_full: url_full,
         url_thumb: url_thumb,
+        url_regular: url_regular,
         savedDate: currentDate(),
     };
 
@@ -68,7 +69,7 @@ const Card = ({id, width, heigth, likes, description, alt_description, url_full,
     }
 
     return (
-        <CardShape image={url_thumb} image2={url_full}>
+        <CardShape image={url_regular} image2={url_full}>
             <BottomCardContainer>
                 {location.pathname.includes("/my_photos") ? (
                     <AddButton onClick={handleDeleteFav}>
@@ -116,4 +117,5 @@ Card.propTypes = {
     alt_description: PropTypes.string,
     url_full: PropTypes.string,
     url_thumb: PropTypes.string,
+    url_regular: PropTypes.string
 };

@@ -99,6 +99,17 @@ export const IconsContainer = styled.div`
     .badge{
         margin-top: 3px;
     }
+    a{
+        &:visited{
+            color: var(--black);
+        }
+    }
+    .edit-icon{
+        &:hover{
+            color: var(--blue-button);
+            cursor: pointer;
+        }
+    }
 `;
 
 export const DataDisplayContainer = styled.div`

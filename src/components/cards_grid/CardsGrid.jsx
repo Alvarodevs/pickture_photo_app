@@ -43,6 +43,9 @@ const CardsGrid = () => {
                         url_thumb={
                             image.url_thumb ? image.url_thumb : image.urls.thumb
                         }
+                        url_regular={
+                            image.url_regular ? image.url_regular : image.urls.regular
+                        }
                     />
                 ))}
             {/* {state === 'ko' && <Error/>} */}
