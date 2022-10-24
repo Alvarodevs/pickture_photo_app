@@ -31,6 +31,7 @@ const Modal = () => {
     const [description, setDescription] = useState(
         !image.description || null ? "No description available." : image.description
     );
+    
     const saveFileFromUrl = (url, id) => {
         saveAs(url, `${id}.jpg`);
     };
