@@ -28,9 +28,7 @@ const Modal = () => {
 
     //Image object recovered from state, passed by Link
     const image = location.state;
-    const [description, setDescription] = useState(
-        image?.description ? "No description available." : image.description
-    );
+    const [description, setDescription] = useState(image?.description || "No description available.");
     
     const saveFileFromUrl = (url, id) => {
         saveAs(url, `${id}.jpg`);
