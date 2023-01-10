@@ -18,9 +18,16 @@ export const HomeIconContainer = styled.button`
    height: 100%;
    background-color: var(--white);
    border: none;
-   margin-left: 10px;
+   margin-left: 20px;
    cursor: pointer;
-   @media only screen and (max-width: 500px) {
+   position: absolute;
+   top: 0;
+   img {
+      box-shadow: 0px 0px 0px 2px #000000, 0px 0px 0px 4px #4b4c4b,
+         0px 0px 0px 6px #828482, 0px 0px 0px 8px #b2b5b2,
+         0px 0px 0px 10px #daddda, 5px 5px 15px 5px rgb(0 0 0 / 0%);
+   }
+   @media only screen and (max-width: 575px) {
       img {
          width: 100%;
       }
