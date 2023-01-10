@@ -87,10 +87,11 @@ const Header = () => {
 
                {/* Display link to my_photos or search by tag if location "/" or "/my_photos" */}
                {path.pathname === "/my_photos" ? (
-                  <FavoritesContainer>
-                     <img src={tags} alt="Tags to search" />
-                     <span>Tags</span>
-                  </FavoritesContainer>
+                  // <FavoritesContainer>
+                  //    <img src={tags} alt="Tags to search" />
+                  //    <span>Tags</span>
+                  // </FavoritesContainer>
+						null
                ) : (
                   <Link to="/my_photos">
                      <FavoritesContainer>
