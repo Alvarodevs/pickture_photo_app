@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/pickture_photo_app/static/css/main.a0614637.css",
-    "main.js": "/pickture_photo_app/static/js/main.3bf4a082.js",
+    "main.js": "/pickture_photo_app/static/js/main.2a174c9d.js",
     "static/js/787.f588d1b0.chunk.js": "/pickture_photo_app/static/js/787.f588d1b0.chunk.js",
-    "static/media/home_icon.svg": "/pickture_photo_app/static/media/home_icon.a92e37f71d5c4c30158132c4bd985e1b.svg",
+    "static/media/home_icon.svg": "/pickture_photo_app/static/media/home_icon.778ea92a199b454d5f2b75738e5c1cfc.svg",
     "static/media/tags.svg": "/pickture_photo_app/static/media/tags.359a1dea2dd90beabc90c109b6c80041.svg",
     "static/media/add_fav_red.svg": "/pickture_photo_app/static/media/add_fav_red.0267a6b839adca952a112d1206fe024c.svg",
     "static/media/add_fav.svg": "/pickture_photo_app/static/media/add_fav.63c446ade6270fb016970989e2457aff.svg",
@@ -12,11 +12,11 @@
     "static/media/linkedin.svg": "/pickture_photo_app/static/media/linkedin.17271f6083fb76f9e748272f543fd442.svg",
     "index.html": "/pickture_photo_app/index.html",
     "main.a0614637.css.map": "/pickture_photo_app/static/css/main.a0614637.css.map",
-    "main.3bf4a082.js.map": "/pickture_photo_app/static/js/main.3bf4a082.js.map",
+    "main.2a174c9d.js.map": "/pickture_photo_app/static/js/main.2a174c9d.js.map",
     "787.f588d1b0.chunk.js.map": "/pickture_photo_app/static/js/787.f588d1b0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a0614637.css",
-    "static/js/main.3bf4a082.js"
+    "static/js/main.2a174c9d.js"
   ]
 }
