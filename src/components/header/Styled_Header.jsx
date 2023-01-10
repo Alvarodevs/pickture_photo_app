@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
    width: 100%;
-   padding: 10px 0;
+   padding: 40px 0 10px 0;
    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
    display: flex;
@@ -12,7 +12,7 @@ export const HeaderContainer = styled.div`
    background-color: var(--white);
    z-index: 1;
 `;
-//box-shadow: 0px 0px 0px 2px #000000, 0px 0px 0px 4px #4b4c4b, 0px 0px 0px 8px #828482, 0px 0px 0px 11px #b2b5b2, 0px 0px 0px 13px #daddda, 5px 5px 15px 5px rgb(0 0 0 / 0%);
+
 export const HomeIconContainer = styled.button`
    width: 85px;
    height: 100%;

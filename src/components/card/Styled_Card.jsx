@@ -1,4 +1,3 @@
-import { green } from "@mui/material/colors";
 import styled from "styled-components";
 
 export const CardShape = styled.div`

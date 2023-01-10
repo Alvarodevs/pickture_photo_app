@@ -58,7 +58,7 @@ const Card = ({
    };
 
    function isInFavorites(id) {
-      favsInState.map((picture) => (picture.id === id ? setIsFav(true) : null));
+      return favsInState.map((picture) => (picture.id === id ? setIsFav(true) : null));
    }
 
    const handleFavorite = () => {
@@ -75,7 +75,6 @@ const Card = ({
    };
 
    useEffect(() => {
-		console.log(isFav)
       isInFavorites(id);
    }, [favsInState]);
 

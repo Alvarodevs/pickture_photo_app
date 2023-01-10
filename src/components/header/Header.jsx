@@ -18,6 +18,7 @@ import tags from "../../assets/icons/tags.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { searchAsync } from "../../features/search/searchSlice";
 import { orderBy, selectFavs } from "../../features/favorites/favoritesSlice";
+import Title from '../title'
 
 const Header = () => {
    const [query, setQuery] = useState("");
@@ -33,7 +34,6 @@ const Header = () => {
 
 	useEffect(() => {
 		dispatch(orderBy({pics: favsPics, options: option}));
-
 	}, [dispatch, option])
 
    const onSearch = () => {
