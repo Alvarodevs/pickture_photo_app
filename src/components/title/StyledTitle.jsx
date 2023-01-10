@@ -6,7 +6,7 @@ export const TitleDiv = styled.h2`
    width: 100%;
    text-align: center;
    padding: 10px;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	z-index: 10;
 `;

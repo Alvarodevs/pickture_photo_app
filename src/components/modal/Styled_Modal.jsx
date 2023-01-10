@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const ModalBackground = styled.div`
-    width: 100%;
-    height: 100vh;
-    background-color: var(--grey-shadow);
-    display: grid;
+   width: 100%;
+   height: 100vh;
+   background-color: var(--grey-shadow);
+   display: grid;
+   padding-top: 50px;
 `;
 
 export const ModalContainer = styled.div`
@@ -12,6 +13,7 @@ export const ModalContainer = styled.div`
     height: 600px;
     border: 2px solid var(--blue-button);
     border-radius: 20px;
+	 
     margin: 85px auto auto auto;
     @media only screen and (max-width: 800px) {
         width: 380px;
