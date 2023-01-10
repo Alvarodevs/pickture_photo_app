@@ -39,11 +39,6 @@ export const Icon = styled.img`
    &:hover {
       transform: rotate(-360deg);
    }
-   filter: ${({ isFav }) =>
-      isFav
-         ? "invert(28%) sepia(95%) saturate(3670%) hue-rotate(348deg) brightness(88%) contrast 141%)"
-         : null
-	};
 `;
 
 export const BottomCardContainer = styled.div`

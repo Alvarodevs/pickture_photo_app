@@ -9,6 +9,7 @@ import {
 } from "./Styled_Card";
 import CardButton from "../card_button/CardButton";
 import add_fav from "../../assets/icons/add_fav.svg";
+import add_fav_red from "../../assets/icons/add_fav_red.svg";
 import remove_fav from "../../assets/icons/delete.svg";
 import {
    addFavorite,
@@ -73,9 +74,10 @@ const Card = ({
       dispatch(deleteFavorite(currentImage.id));
    };
 
-   // useEffect(() => {
-   //    isInFavorites(id);
-   // }, [favsInState]);
+   useEffect(() => {
+		console.log(isFav)
+      isInFavorites(id);
+   }, [favsInState]);
 
    return (
       <CardShape image={url_regular} image2={url_full}>
@@ -85,19 +87,12 @@ const Card = ({
                   <Icon
                      src={remove_fav}
                      alt="Delete from favourites"
-                     isFav={isFav}
                   />
                </AddButton>
             ) : (
                <AddButton onClick={handleFavorite}>
-                  <Icon src={add_fav} alt="Add to favourites" isFav={isFav} />
-                  {console.log(
-                     <Icon
-                        src={add_fav}
-                        alt="Add to favourites"
-                        isFav={isFav}
-                     />
-                  )}
+                  <Icon src={isFav ? add_fav_red : add_fav} alt="Add to favourites" />
+                  {console.log(id, isFav)}
                </AddButton>
             )}
             <Title
