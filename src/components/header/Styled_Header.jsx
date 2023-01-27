@@ -18,20 +18,29 @@ export const HomeIconContainer = styled.button`
    height: 100%;
    background-color: var(--white);
    border: none;
+   
    margin-left: 20px;
    cursor: pointer;
    position: absolute;
    top: 0;
+   z-index: 3;
    img {
-      box-shadow: 0px 0px 0px 2px #000000, 0px 0px 0px 4px #4b4c4b,
-         0px 0px 0px 6px #828482, 0px 0px 0px 8px #b2b5b2,
-         0px 0px 0px 10px #daddda, 5px 5px 15px 5px rgb(0 0 0 / 0%);
-   }
-   @media only screen and (max-width: 575px) {
+      box-shadow: ${({ pathname }) =>
+         pathname !== "/my_photos"
+            ? `0px 0px 0px 2px #000000, 5px 5px 15px 5px rgb(0 0 0 / 50%);`
+            : null};
+      border-radius: 10px;
+   };
+   @media only screen and (max-width: 630px) {
+      width: 70px;
       img {
          width: 100%;
       }
-   }
+   };
+
+   @media only screen and (max-width: 460px) {
+      width: 50px;
+   };
 `;
 
 export const ManageDataIcons = styled.div`
@@ -40,7 +49,7 @@ export const ManageDataIcons = styled.div`
    align-items: center;
    justify-content: end;
    font-weight: bold;
-   margin-right: 50px;
+   margin: 0 50px 0 10rem;
    svg {
       font-size: 30px;
       cursor: pointer;
@@ -54,10 +63,12 @@ export const ManageDataIcons = styled.div`
    }
    @media only screen and (max-width: 630px) {
       margin-right: 10px;
+      margin-left: 135px;
    }
    @media only screen and (max-width: 460px) {
-      width: 80%;
+      width: 100%;
       font-size: 11px;
+      margin-left: 80px;
    }
 `;
 
@@ -75,7 +86,7 @@ export const OrderByContainer = styled.div`
       }
    }
    select {
-		z-index: 1;
+      z-index: 1;
       position: absolute;
       border-radius: 10px;
       font-size: 15px;
@@ -92,27 +103,38 @@ export const OrderByContainer = styled.div`
          padding: 5px;
       }
    }
-   @media only screen and (max-width: 640px) {
-      width: fit-content;
+   @media only screen and (max-width: 750px) {
       span {
-         font-size: 12px;
+         display: none;
       }
       select {
-         transform: translate(-65px, 25px);
-         margin: auto;
+         margin-left: -1.5rem;
       }
    }
+   @media only screen and (max-width: 640px) {
+      width: fit-content;
+      
+      select {
+         top: 4rem;
+      }
+      .order_icon {
+         display: none;
+      };
+   }
+
+   
    @media only screen and (max-width: 460px) {
       select {
-         transform: translate(-65px, 25px);
+         top: 3.5rem;
+         margin-left: -3rem;
       }
    }
    @media only screen and (max-width: 366px) {
-      span {
-         display: block;
-      }
       select {
-         transform: translate(-5px, 10px);
+         top: 4.5rem;
+         left: 0.5rem;
+         margin-left: 0;
+         z-index: 5;
       }
    }
 `;
@@ -144,21 +166,22 @@ export const InputContainer = styled.div`
       right: 15px;
    }
    @media only screen and (max-width: 640px) {
-      width: 65%;
+      width: 100%;
       input {
-         width: 90%;
+         width: 70%;
       }
    }
    @media only screen and (max-width: 460px) {
       flex-direction: column;
       margin-right: 0px;
-      width: 60%;
+      width: 70%;
       input {
-         width: 90%;
+         width: 65%;
          margin: 0 10px;
       }
       svg {
          margin-bottom: 5px;
+         display: none;
       }
    }
 
@@ -172,8 +195,18 @@ export const FavoritesContainer = styled.div`
    display: flex;
    flex-direction: column;
    align-items: center;
+   border-radius: 10px;
+   padding: 2px;
+   box-shadow: ${({ pathname }) =>
+      pathname === "/my_photos" ? `1px 1px 1px 2px var(--red)` : null};
+   color: ${({ pathname }) =>
+      pathname === "/my_photos" ? `var(--red)` : null};
    img {
       width: 50px;
       height: 35px;
+   }
+   svg {
+      color: ${({ pathname }) =>
+         pathname === "/my_photos" ? "var(--red)" : null};
    }
 `;
