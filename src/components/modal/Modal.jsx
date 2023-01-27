@@ -15,7 +15,7 @@ import { useLocation, Link } from "react-router-dom";
 import { Badge, TextField, Typography } from "@mui/material";
 import {
     ThumbUpOutlined,
-    SaveAltOutlined,
+    SaveOutlined,
     CloseRounded,
 } from "@mui/icons-material";
 import { saveAs } from "file-saver";
@@ -43,7 +43,8 @@ const Modal = () => {
                     maxRows="3"
                     fullWidth="true"
                     InputProps={{
-                        disableUnderline: true,
+                        disableUnderline: false,
+                        autoFocus: true
                     }}
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
@@ -98,7 +99,7 @@ const Modal = () => {
                             </Badge>
                             {location.pathname.includes("my_photos") ? (
                                 <Link to={'/my_photos'}>
-                                    <SaveAltOutlined
+                                    <SaveOutlined
                                         className="edit-icon"
                                         fontSize="large"
                                         onClick={() => handleEditDescription(

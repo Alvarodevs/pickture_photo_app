@@ -72,7 +72,7 @@ export const DescriptionAndIconsContainer = styled.div`
     display: flex;
     height: 50%;
     .MuiInputBase-root,.MuiInput-formControl {
-        border: transparent;
+        margin: 1px;
         padding: 3px 5px;
     }
     @media only screen and (max-width: 490){
@@ -107,6 +107,7 @@ export const IconsContainer = styled.div`
         }
     }
     .edit-icon{
+        margin-top: 5px;
         &:hover{
             color: var(--blue-button);
             cursor: pointer;

@@ -90,7 +90,7 @@ const Header = () => {
             //    <img src={tags} alt="Tags to search" />
             //    <span>Tags</span>
             // </FavoritesContainer>
-            <FavoritesContainer pathname={path.pathname}>
+            <FavoritesContainer pathname={path.pathname.includes("my_photos")}>
               <FavoriteBorderOutlined />
               <span>My pics</span>
             </FavoritesContainer>

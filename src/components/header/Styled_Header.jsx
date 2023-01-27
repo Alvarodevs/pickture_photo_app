@@ -198,15 +198,15 @@ export const FavoritesContainer = styled.div`
    border-radius: 10px;
    padding: 2px;
    box-shadow: ${({ pathname }) =>
-      pathname === "/my_photos" ? `1px 1px 1px 2px var(--red)` : null};
+      pathname ? `1px 1px 1px 2px var(--red)` : null};
    color: ${({ pathname }) =>
-      pathname === "/my_photos" ? `var(--red)` : null};
+      pathname ? `var(--red)` : null};
    img {
       width: 50px;
       height: 35px;
    }
    svg {
       color: ${({ pathname }) =>
-         pathname === "/my_photos" ? "var(--red)" : null};
+         pathname ? "var(--red)" : null};
    }
 `;
