@@ -25,6 +25,7 @@ export const HomeIconContainer = styled.button`
    top: 0;
    z-index: 3;
    img {
+      z-index: 10;
       box-shadow: ${({ pathname }) =>
          pathname !== "/my_photos"
             ? `0px 0px 0px 2px #000000, 5px 5px 15px 5px rgb(0 0 0 / 50%);`

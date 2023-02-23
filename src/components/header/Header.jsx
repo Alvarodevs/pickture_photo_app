@@ -28,7 +28,6 @@ const Header = () => {
   const favsPics = useSelector(selectFavs);
 
   const handleOption = (e) => {
-    console.log(e.target);
     setOption(e.target.value);
   };
 
