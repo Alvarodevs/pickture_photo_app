@@ -17,8 +17,8 @@ export const HomeIconContainer = styled.button`
    height: 100%;
    background-color: var(--white);
    border: none;
-   padding-left: 5px;
-    padding-right: 10px;
+   padding-left: 10px;
+   padding-right: 15px;
    margin-left: 20px;
    cursor: pointer;
    position: absolute;
