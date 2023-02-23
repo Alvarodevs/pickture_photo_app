@@ -14,11 +14,11 @@ export const HeaderContainer = styled.div`
 `;
 
 export const HomeIconContainer = styled.button`
-   width: 85px;
    height: 100%;
    background-color: var(--white);
    border: none;
-   
+   padding-left: 5px;
+    padding-right: 10px;
    margin-left: 20px;
    cursor: pointer;
    position: absolute;
